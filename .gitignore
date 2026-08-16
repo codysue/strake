@@ -5,6 +5,7 @@ node_modules/
 # build outputs
 packages/react/dist/
 mcp/dist/
+mcp/src/generated/
 storybook-static/
 *.tsbuildinfo
 

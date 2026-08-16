@@ -1,0 +1,29 @@
+{
+  "name": "@codysue/strake-mcp",
+  "version": "0.1.0",
+  "description": "A hardened, read-only MCP server that exposes Strake's design tokens and component metadata as agent-queryable tools — the design system as a queryable API.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "strake-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "gen": "node scripts/gen-metadata.mjs",
+    "prebuild": "pnpm gen",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "pnpm gen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}
