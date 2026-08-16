@@ -1,0 +1,20 @@
+.sb-frame {
+  min-height: 240px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: var(--strake-color-bg);
+  color: var(--strake-color-fg);
+  font-family: var(--strake-font-family-sans);
+  border-radius: 12px;
+}
+
+/* Let full-bleed layout stories opt out of centering. */
+.sb-frame:has(> .sb-fill) {
+  display: block;
+}
+.sb-fill {
+  width: 100%;
+}
