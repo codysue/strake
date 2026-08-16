@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build outputs
+packages/react/dist/
+mcp/dist/
+storybook-static/
+*.tsbuildinfo
+
+# NOTE: tokens/dist/ is intentionally committed — the generated token
+# outputs are part of the "visible pipeline" story (see README). The
+# tokens:check drift guard fails CI if they fall out of sync with src.
+
+# editor / os
+.DS_Store
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+
+# env
+.env
+.env.*
+!.env.example

@@ -1,0 +1,10 @@
+packages:
+  - 'tokens'
+  - 'packages/*'
+  - 'mcp'
+
+# Approved native/build scripts for trusted, widely-used deps.
+allowBuilds:
+  '@bundled-es-modules/glob': true
+  esbuild: true
+  style-dictionary: true

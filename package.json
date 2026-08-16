@@ -1,0 +1,39 @@
+{
+  "name": "strake-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Strake — a small, accessible React component library with a visible token pipeline and an agent-queryable design-system API.",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:tokens": "pnpm --filter @codysue/strake-tokens build",
+    "build:react": "pnpm --filter @codysue/strake build",
+    "build:mcp": "pnpm --filter @codysue/strake-mcp build",
+    "build": "pnpm build:tokens && pnpm build:react && pnpm build:mcp",
+    "tokens:check": "pnpm build:tokens && node scripts/check-token-drift.mjs",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build:storybook": "pnpm build:tokens && storybook build -o storybook-static",
+    "clean": "rimraf tokens/dist packages/react/dist mcp/dist storybook-static tsconfig.tsbuildinfo"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^8.4.7",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^6.0.1",
+    "storybook": "^8.4.7",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
