@@ -41,8 +41,10 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     const errorId = `${inputId}-error`;
     const invalid = error != null && error !== false;
 
+    // Reference only ids that are actually rendered: the description element is
+    // omitted when the field is invalid (the error replaces it).
     const describedBy =
-      [description ? descId : null, invalid ? errorId : null]
+      [description && !invalid ? descId : null, invalid ? errorId : null]
         .filter(Boolean)
         .join(' ') || undefined;
 

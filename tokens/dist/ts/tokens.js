@@ -187,7 +187,7 @@ export const tokens = {
     "md": "var(--strake-shadow-md)",
     "lg": "var(--strake-shadow-lg)"
   }
-} as const;
+};
 
 export const rawTokens = {
   "color": {
@@ -374,6 +374,4 @@ export const rawTokens = {
     "md": "0 4px 12px -2px rgba(17, 20, 24, 0.10), 0 2px 4px -2px rgba(17, 20, 24, 0.06)",
     "lg": "0 12px 32px -8px rgba(17, 20, 24, 0.18), 0 4px 8px -4px rgba(17, 20, 24, 0.08)"
   }
-} as const;
-
-export type Tokens = typeof tokens;
+};

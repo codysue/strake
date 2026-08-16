@@ -73,8 +73,8 @@ function CheckIcon() {
  * An accessible custom select (listbox pattern). Full keyboard support —
  * Up/Down move the active option, Home/End jump to the ends, type-ahead
  * matches by label, Enter/Space select, Escape closes — with `role="listbox"`,
- * `role="option"`, `aria-selected`, and `aria-activedescendant`-style focus
- * managed by Floating UI. Provide an `aria-label` or `aria-labelledby`.
+ * `role="option"`, `aria-selected`, and roving focus managed by Floating UI.
+ * Provide an `aria-label` or `aria-labelledby`.
  */
 export function Select({
   options,

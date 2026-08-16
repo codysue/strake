@@ -52,13 +52,13 @@ rendered live under **Foundations → Tokens** in Storybook.
 
 - **Dialog** and **Command menu** use a **hand-built focus trap** (`useFocusTrap`):
   Tab wraps, initial focus moves in, Escape closes, focus returns to the trigger.
-- **Select** is a full listbox — Up/Down, Home/End, type-ahead, `aria-activedescendant`.
+- **Select** is a full listbox — Up/Down, Home/End, type-ahead, roving focus.
 - **Command menu** is a `role="combobox"` driving a `role="listbox"`.
 - **DataTable** is keyboard-navigable with roving `tabindex` and `aria-sort`.
 - One focus ring, defined once as a token, reused everywhere via `:focus-visible`.
 
-Verified with `axe-core` (0 violations across components in light and dark), and every
-story runs the Storybook a11y addon live.
+Checked with `axe-core` — 0 violations across the components I tested, in light and
+dark — and every story runs the Storybook a11y addon live, so anyone can re-check.
 
 ### 3. The design system as a queryable API
 

@@ -34,8 +34,10 @@ function cssValue(token) {
 }
 
 // `name/kebab` gives every token a unique, prefixed, kebab-cased name
-// (e.g. strake-font-family-sans), which both silences SD's collision check and
-// keeps CSS custom properties conventionally kebab-cased.
+// (e.g. strake-font-family-sans) so token *names* never collide, and CSS custom
+// properties stay conventionally kebab-cased. (Style Dictionary may still note
+// benign group-metadata merges — the same group's $type/$description declared
+// across files — so warnings are disabled below; names are guaranteed unique.)
 const cssVar = (t) => `--${t.name}`;
 const cssVarRef = (t) => `var(--${t.name})`;
 
@@ -66,21 +68,45 @@ StyleDictionary.registerFormat({
   },
 });
 
+function tokenTrees(dictionary) {
+  const refs = {};
+  const raw = {};
+  for (const t of dictionary.allTokens) {
+    setDeep(refs, t.path, cssVarRef(t));
+    setDeep(raw, t.path, cssValue(t));
+  }
+  return { refs, raw };
+}
+
+const TS_HEADER =
+  '// Strake tokens — generated from tokens/src. Do not edit by hand.\n' +
+  '//   `tokens`    — theme-aware CSS variable references (recommended for consumers).\n' +
+  '//   `rawTokens` — resolved light-theme values (for tooling that needs concrete values).\n\n';
+
+// Ship the constants as runnable JS plus a precise .d.ts, so the package's main
+// export is consumable by any bundler (not a raw .ts entrypoint).
 StyleDictionary.registerFormat({
-  name: 'strake/ts',
+  name: 'strake/js',
   format: ({ dictionary }) => {
-    const refs = {};
-    const raw = {};
-    for (const t of dictionary.allTokens) {
-      setDeep(refs, t.path, cssVarRef(t));
-      setDeep(raw, t.path, cssValue(t));
-    }
+    const { refs, raw } = tokenTrees(dictionary);
     return (
-      '// Strake tokens — generated from tokens/src. Do not edit by hand.\n' +
-      '//   `tokens`    — theme-aware CSS variable references (recommended for consumers).\n' +
-      '//   `rawTokens` — resolved light-theme values (for tooling that needs concrete values).\n\n' +
-      `export const tokens = ${JSON.stringify(refs, null, 2)} as const;\n\n` +
-      `export const rawTokens = ${JSON.stringify(raw, null, 2)} as const;\n\n` +
+      TS_HEADER +
+      `export const tokens = ${JSON.stringify(refs, null, 2)};\n\n` +
+      `export const rawTokens = ${JSON.stringify(raw, null, 2)};\n`
+    );
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: 'strake/dts',
+  format: ({ dictionary }) => {
+    const { refs, raw } = tokenTrees(dictionary);
+    // The value trees double as type literals — each leaf string becomes a
+    // string-literal type, so consumers get precise autocomplete.
+    return (
+      TS_HEADER +
+      `export declare const tokens: ${JSON.stringify(refs, null, 2)};\n\n` +
+      `export declare const rawTokens: ${JSON.stringify(raw, null, 2)};\n\n` +
       'export type Tokens = typeof tokens;\n'
     );
   },
@@ -205,6 +231,7 @@ const SHARED = ['src/primitive.tokens.json', 'src/semantic.tokens.json'];
 
 const base = new StyleDictionary({
   usesDtcg: true,
+  log: { warnings: 'disabled' },
   source: [...SHARED, 'src/semantic.light.tokens.json'],
   platforms: {
     css: {
@@ -217,7 +244,10 @@ const base = new StyleDictionary({
       prefix: PREFIX,
       transforms: ['name/kebab'],
       buildPath: 'dist/ts/',
-      files: [{ destination: 'tokens.ts', format: 'strake/ts' }],
+      files: [
+        { destination: 'tokens.js', format: 'strake/js' },
+        { destination: 'tokens.d.ts', format: 'strake/dts' },
+      ],
     },
     tailwind: {
       prefix: PREFIX,
@@ -236,6 +266,7 @@ const base = new StyleDictionary({
 
 const dark = new StyleDictionary({
   usesDtcg: true,
+  log: { warnings: 'disabled' },
   source: [...SHARED, 'src/semantic.dark.tokens.json'],
   platforms: {
     css: {
