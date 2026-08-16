@@ -6,7 +6,7 @@
   --strake-color-neutral-200: #e2e5e9;
   --strake-color-neutral-300: #cbd0d6;
   --strake-color-neutral-400: #a2abb5;
-  --strake-color-neutral-500: #78828e;
+  --strake-color-neutral-500: #6b7480;
   --strake-color-neutral-600: #566069;
   --strake-color-neutral-700: #3f474f;
   --strake-color-neutral-800: #2b3138;
@@ -64,7 +64,7 @@
   --strake-color-surface-sunken: #f7f8f9;
   --strake-color-fg: #1b2026;
   --strake-color-fg-muted: #566069;
-  --strake-color-fg-subtle: #78828e;
+  --strake-color-fg-subtle: #6b7480;
   --strake-color-fg-on-accent: #ffffff;
   --strake-color-border: #e2e5e9;
   --strake-color-border-strong: #cbd0d6;
@@ -148,7 +148,7 @@
   --strake-color-surface-sunken: #111418;
   --strake-color-fg: #f7f8f9;
   --strake-color-fg-muted: #a2abb5;
-  --strake-color-fg-subtle: #78828e;
+  --strake-color-fg-subtle: #a2abb5;
   --strake-color-fg-on-accent: #111418;
   --strake-color-border: #2b3138;
   --strake-color-border-strong: #3f474f;

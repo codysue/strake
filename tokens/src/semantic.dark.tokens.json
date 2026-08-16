@@ -10,7 +10,7 @@
     "surface-sunken":{ "$value": "{color.neutral.950}" },
     "fg":            { "$value": "{color.neutral.50}" },
     "fg-muted":      { "$value": "{color.neutral.400}" },
-    "fg-subtle":     { "$value": "{color.neutral.500}" },
+    "fg-subtle":     { "$value": "{color.neutral.400}" },
     "fg-on-accent":  { "$value": "{color.neutral.950}" },
     "border":        { "$value": "{color.neutral.800}" },
     "border-strong": { "$value": "{color.neutral.700}" },
