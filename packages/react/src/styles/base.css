@@ -1,0 +1,33 @@
+/* Strake base — shared primitives every component builds on.
+   Scoped to strk-* classes so Strake never restyles a consumer's page. */
+
+[class^='strk-'],
+[class*=' strk-'] {
+  box-sizing: border-box;
+}
+
+.strk-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* One focus ring, defined once, reused by every interactive element via
+   :focus-visible. Keyboard users get it; pointer users don't. */
+.strk-focus-ring:focus-visible {
+  outline: var(--strake-focus-ring-width) solid var(--strake-color-ring);
+  outline-offset: var(--strake-focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .strk-motion-safe {
+    animation: none !important;
+    transition: none !important;
+  }
+}

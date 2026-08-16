@@ -1,0 +1,110 @@
+.strk-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--strake-space-1);
+  font-family: var(--strake-font-family-sans);
+}
+
+.strk-field__label {
+  font-size: var(--strake-font-size-md);
+  font-weight: var(--strake-font-weight-medium);
+  color: var(--strake-color-fg);
+}
+.strk-field__required {
+  color: var(--strake-color-danger);
+  margin-left: 2px;
+}
+
+.strk-field__control {
+  display: flex;
+  align-items: center;
+  gap: var(--strake-space-2);
+  background-color: var(--strake-color-surface);
+  border: var(--strake-border-width-thin) solid var(--strake-color-border-strong);
+  border-radius: var(--strake-radius-control);
+  transition:
+    border-color var(--strake-duration-fast) var(--strake-easing-standard),
+    background-color var(--strake-duration-fast) var(--strake-easing-standard);
+}
+
+/* The whole control shows the focus ring when the inner input is focused. */
+.strk-field__control:focus-within {
+  outline: var(--strake-focus-ring-width) solid var(--strake-color-ring);
+  outline-offset: var(--strake-focus-ring-offset);
+  border-color: var(--strake-color-ring);
+}
+
+.strk-field__control[data-invalid] {
+  border-color: var(--strake-color-danger);
+}
+.strk-field__control[data-invalid]:focus-within {
+  outline-color: var(--strake-color-danger);
+  border-color: var(--strake-color-danger);
+}
+.strk-field__control[data-disabled] {
+  opacity: 0.6;
+  background-color: var(--strake-color-surface-sunken);
+}
+
+.strk-field--sm .strk-field__control {
+  padding: 0 var(--strake-space-2);
+}
+.strk-field--md .strk-field__control {
+  padding: 0 var(--strake-space-3);
+}
+.strk-field--lg .strk-field__control {
+  padding: 0 var(--strake-space-4);
+}
+
+.strk-field__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--strake-color-fg);
+  font: inherit;
+  font-family: var(--strake-font-family-sans);
+}
+.strk-field--sm .strk-field__input {
+  height: var(--strake-space-7);
+  font-size: var(--strake-font-size-sm);
+}
+.strk-field--md .strk-field__input {
+  height: var(--strake-space-8);
+  font-size: var(--strake-font-size-base);
+}
+.strk-field--lg .strk-field__input {
+  height: var(--strake-space-9);
+  font-size: var(--strake-font-size-lg);
+}
+
+.strk-field__input::placeholder {
+  color: var(--strake-color-fg-subtle);
+}
+.strk-field__input:disabled {
+  cursor: not-allowed;
+}
+
+.strk-field__adornment {
+  display: inline-flex;
+  align-items: center;
+  color: var(--strake-color-fg-muted);
+  flex: none;
+}
+.strk-field__adornment svg {
+  width: 1.05em;
+  height: 1.05em;
+  display: block;
+}
+
+.strk-field__description {
+  margin: 0;
+  font-size: var(--strake-font-size-sm);
+  color: var(--strake-color-fg-muted);
+}
+.strk-field__error {
+  margin: 0;
+  font-size: var(--strake-font-size-sm);
+  color: var(--strake-color-danger);
+}

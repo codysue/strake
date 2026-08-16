@@ -1,0 +1,17 @@
+.strk-popover {
+  z-index: 50;
+}
+
+.strk-popover__inner {
+  min-width: 220px;
+  max-width: 320px;
+  padding: var(--strake-space-3);
+  background-color: var(--strake-color-surface);
+  color: var(--strake-color-fg);
+  border: var(--strake-border-width-thin) solid var(--strake-color-border);
+  border-radius: var(--strake-radius-surface);
+  box-shadow: var(--strake-shadow-lg);
+  font-family: var(--strake-font-family-sans);
+  font-size: var(--strake-font-size-base);
+  transform-origin: top left;
+}

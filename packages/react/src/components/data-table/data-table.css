@@ -1,0 +1,84 @@
+.strk-table__wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: var(--strake-border-width-thin) solid var(--strake-color-border);
+  border-radius: var(--strake-radius-surface);
+}
+
+.strk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--strake-font-family-sans);
+  font-size: var(--strake-font-size-base);
+  color: var(--strake-color-fg);
+}
+
+.strk-table__caption {
+  padding: var(--strake-space-3) var(--strake-space-4);
+  text-align: left;
+  font-size: var(--strake-font-size-sm);
+  color: var(--strake-color-fg-muted);
+  border-bottom: var(--strake-border-width-thin) solid var(--strake-color-border);
+}
+
+.strk-table__th {
+  text-align: left;
+  font-weight: var(--strake-font-weight-semibold);
+  font-size: var(--strake-font-size-sm);
+  color: var(--strake-color-fg-muted);
+  background-color: var(--strake-color-bg-subtle);
+  padding: 0;
+  white-space: nowrap;
+}
+.strk-table__th:not(:has(.strk-table__sort)) {
+  padding: var(--strake-space-2) var(--strake-space-4);
+}
+
+.strk-table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--strake-space-1);
+  width: 100%;
+  padding: var(--strake-space-2) var(--strake-space-4);
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-weight: var(--strake-font-weight-semibold);
+  color: inherit;
+  cursor: pointer;
+}
+.strk-table__sort:hover {
+  color: var(--strake-color-fg);
+}
+.strk-table__sort-icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.strk-table__row {
+  border-top: var(--strake-border-width-thin) solid var(--strake-color-border);
+  outline: none;
+}
+.strk-table__row.is-interactive {
+  cursor: pointer;
+}
+.strk-table__row.is-interactive:hover {
+  background-color: var(--strake-color-bg-subtle);
+}
+.strk-table__row.is-interactive:focus-visible {
+  outline: var(--strake-focus-ring-width) solid var(--strake-color-ring);
+  outline-offset: calc(-1 * var(--strake-focus-ring-width));
+}
+
+.strk-table__td {
+  padding: var(--strake-space-3) var(--strake-space-4);
+  line-height: var(--strake-line-height-snug);
+}
+
+.strk-table__cell--end {
+  text-align: right;
+}
+.strk-table__th.strk-table__cell--end .strk-table__sort {
+  justify-content: flex-end;
+}

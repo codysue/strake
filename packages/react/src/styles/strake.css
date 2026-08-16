@@ -1,0 +1,19 @@
+/* Strake — the single stylesheet.
+   postcss-import inlines the token custom properties and every component's CSS
+   into one file (dist/strake.css) that consumers import as
+   `@codysue/strake/styles.css`. The relative token path resolves in the
+   monorepo at build time; the published output is fully self-contained. */
+
+@import '../../../../tokens/dist/css/strake.css';
+@import './base.css';
+
+@import '../components/button/button.css';
+@import '../components/switch/switch.css';
+@import '../components/text-field/text-field.css';
+@import '../components/select/select.css';
+@import '../components/tooltip/tooltip.css';
+@import '../components/popover/popover.css';
+@import '../components/dialog/dialog.css';
+@import '../components/command/command.css';
+@import '../components/toast/toast.css';
+@import '../components/data-table/data-table.css';
