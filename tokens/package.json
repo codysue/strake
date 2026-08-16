@@ -1,0 +1,23 @@
+{
+  "name": "@codysue/strake-tokens",
+  "version": "0.1.0",
+  "description": "Strake design tokens — a W3C DTCG source of truth compiled to CSS variables, a Tailwind theme fragment, TypeScript constants, and agent-readable metadata via Style Dictionary.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "files": ["dist", "src"],
+  "exports": {
+    ".": "./dist/ts/tokens.ts",
+    "./css": "./dist/css/strake.css",
+    "./tailwind": "./dist/tailwind/theme.cjs",
+    "./metadata": "./dist/metadata/tokens.json"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "style-dictionary": "^4.3.0"
+  }
+}

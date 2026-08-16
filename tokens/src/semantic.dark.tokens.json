@@ -1,0 +1,35 @@
+{
+  "$description": "Dark theme — the semantic color and shadow roles that override the light values. Emitted under [data-theme=\"dark\"], .dark.",
+
+  "color": {
+    "$type": "color",
+    "bg":            { "$value": "{color.neutral.950}" },
+    "bg-subtle":     { "$value": "{color.neutral.900}" },
+    "bg-muted":      { "$value": "{color.neutral.800}" },
+    "surface":       { "$value": "{color.neutral.900}" },
+    "surface-sunken":{ "$value": "{color.neutral.950}" },
+    "fg":            { "$value": "{color.neutral.50}" },
+    "fg-muted":      { "$value": "{color.neutral.400}" },
+    "fg-subtle":     { "$value": "{color.neutral.500}" },
+    "fg-on-accent":  { "$value": "{color.neutral.950}" },
+    "border":        { "$value": "{color.neutral.800}" },
+    "border-strong": { "$value": "{color.neutral.700}" },
+    "accent":        { "$value": "{color.verdigris.400}" },
+    "accent-hover":  { "$value": "{color.verdigris.300}" },
+    "accent-active": { "$value": "{color.verdigris.200}" },
+    "accent-subtle": { "$value": "{color.verdigris.950}" },
+    "ring":          { "$value": "{color.verdigris.400}" },
+    "danger":        { "$value": "{color.red.400}" },
+    "danger-hover":  { "$value": "{color.red.300}" },
+    "danger-subtle": { "$value": "{color.red.950}" },
+    "success":       { "$value": "{color.green.400}" },
+    "warning":       { "$value": "{color.amber.400}" },
+    "overlay":       { "$value": "rgba(0, 0, 0, 0.6)" }
+  },
+
+  "shadow": {
+    "sm": { "$value": "0 1px 2px 0 rgba(0, 0, 0, 0.4)" },
+    "md": { "$value": "0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4)" },
+    "lg": { "$value": "0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 4px 8px -4px rgba(0, 0, 0, 0.4)" }
+  }
+}

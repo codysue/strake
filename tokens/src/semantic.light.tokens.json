@@ -1,0 +1,35 @@
+{
+  "$description": "Light theme — semantic color and shadow roles. Emitted under :root.",
+
+  "color": {
+    "$type": "color",
+    "bg":            { "$value": "{color.neutral.0}",   "$description": "Page background." },
+    "bg-subtle":     { "$value": "{color.neutral.50}",  "$description": "Subtle zebra / hover background." },
+    "bg-muted":      { "$value": "{color.neutral.100}", "$description": "Muted fill for pressed / selected rows." },
+    "surface":       { "$value": "{color.neutral.0}",   "$description": "Raised surface — cards, menus, dialogs." },
+    "surface-sunken":{ "$value": "{color.neutral.50}",  "$description": "Inset surface — input wells, code blocks." },
+    "fg":            { "$value": "{color.neutral.900}", "$description": "Primary text." },
+    "fg-muted":      { "$value": "{color.neutral.600}", "$description": "Secondary text, descriptions." },
+    "fg-subtle":     { "$value": "{color.neutral.500}", "$description": "Placeholder, disabled text." },
+    "fg-on-accent":  { "$value": "{color.neutral.0}",   "$description": "Text/icon on an accent fill." },
+    "border":        { "$value": "{color.neutral.200}", "$description": "Default hairline border." },
+    "border-strong": { "$value": "{color.neutral.300}", "$description": "Emphasized border, input outline." },
+    "accent":        { "$value": "{color.verdigris.600}" },
+    "accent-hover":  { "$value": "{color.verdigris.700}" },
+    "accent-active": { "$value": "{color.verdigris.800}" },
+    "accent-subtle": { "$value": "{color.verdigris.50}", "$description": "Tinted accent background." },
+    "ring":          { "$value": "{color.verdigris.500}", "$description": "Focus ring." },
+    "danger":        { "$value": "{color.red.600}" },
+    "danger-hover":  { "$value": "{color.red.700}" },
+    "danger-subtle": { "$value": "{color.red.50}" },
+    "success":       { "$value": "{color.green.600}" },
+    "warning":       { "$value": "{color.amber.500}" },
+    "overlay":       { "$value": "rgba(17, 20, 24, 0.5)", "$description": "Dialog / command-menu backdrop scrim." }
+  },
+
+  "shadow": {
+    "sm": { "$value": "0 1px 2px 0 rgba(17, 20, 24, 0.06)" },
+    "md": { "$value": "0 4px 12px -2px rgba(17, 20, 24, 0.10), 0 2px 4px -2px rgba(17, 20, 24, 0.06)" },
+    "lg": { "$value": "0 12px 32px -8px rgba(17, 20, 24, 0.18), 0 4px 8px -4px rgba(17, 20, 24, 0.08)" }
+  }
+}

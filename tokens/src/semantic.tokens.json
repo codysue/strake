@@ -1,0 +1,33 @@
+{
+  "$description": "Theme-independent semantic tokens. These alias primitives into role names components reference. Color + shadow semantics that flip per theme live in semantic.light/dark.",
+
+  "radius": {
+    "$type": "dimension",
+    "control": { "$value": "{radius.md}", "$description": "Buttons, inputs, and other interactive controls." },
+    "surface": { "$value": "{radius.lg}", "$description": "Cards, popovers, dialogs." },
+    "pill":    { "$value": "{radius.full}" }
+  },
+
+  "focus": {
+    "$type": "dimension",
+    "ring": {
+      "width":  { "$value": "2px" },
+      "offset": { "$value": "2px" }
+    }
+  },
+
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast":   { "$value": "{duration.fast}" },
+      "normal": { "$value": "{duration.normal}" },
+      "slow":   { "$value": "{duration.slow}" }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard":   { "$value": "{easing.standard}" },
+      "emphasized": { "$value": "{easing.emphasized}" },
+      "exit":       { "$value": "{easing.exit}" }
+    }
+  }
+}

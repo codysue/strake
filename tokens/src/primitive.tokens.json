@@ -1,0 +1,161 @@
+{
+  "color": {
+    "$type": "color",
+    "neutral": {
+      "0":    { "$value": "#ffffff" },
+      "50":   { "$value": "#f7f8f9" },
+      "100":  { "$value": "#eef0f2" },
+      "200":  { "$value": "#e2e5e9" },
+      "300":  { "$value": "#cbd0d6" },
+      "400":  { "$value": "#a2abb5" },
+      "500":  { "$value": "#78828e" },
+      "600":  { "$value": "#566069" },
+      "700":  { "$value": "#3f474f" },
+      "800":  { "$value": "#2b3138" },
+      "900":  { "$value": "#1b2026" },
+      "950":  { "$value": "#111418" },
+      "1000": { "$value": "#000000" }
+    },
+    "verdigris": {
+      "$description": "Strake's accent — the blue-green patina that forms on a ship's weathered copper and bronze.",
+      "50":  { "$value": "#edfbf7" },
+      "100": { "$value": "#d3f4ea" },
+      "200": { "$value": "#a9e8d6" },
+      "300": { "$value": "#74d6bd" },
+      "400": { "$value": "#3fbda0" },
+      "500": { "$value": "#1aa287" },
+      "600": { "$value": "#0e806d" },
+      "700": { "$value": "#0d6659" },
+      "800": { "$value": "#0e5148" },
+      "900": { "$value": "#0d433c" },
+      "950": { "$value": "#042722" }
+    },
+    "red": {
+      "50":  { "$value": "#fef2f2" },
+      "100": { "$value": "#fee2e2" },
+      "200": { "$value": "#fecaca" },
+      "300": { "$value": "#fca5a5" },
+      "400": { "$value": "#f87171" },
+      "500": { "$value": "#ef4444" },
+      "600": { "$value": "#dc2626" },
+      "700": { "$value": "#b91c1c" },
+      "800": { "$value": "#991b1b" },
+      "900": { "$value": "#7f1d1d" },
+      "950": { "$value": "#450a0a" }
+    },
+    "green": {
+      "50":  { "$value": "#f0fdf4" },
+      "100": { "$value": "#dcfce7" },
+      "200": { "$value": "#bbf7d0" },
+      "300": { "$value": "#86efac" },
+      "400": { "$value": "#4ade80" },
+      "500": { "$value": "#22c55e" },
+      "600": { "$value": "#16a34a" },
+      "700": { "$value": "#15803d" },
+      "800": { "$value": "#166534" },
+      "900": { "$value": "#14532d" },
+      "950": { "$value": "#052e16" }
+    },
+    "amber": {
+      "50":  { "$value": "#fffbeb" },
+      "100": { "$value": "#fef3c7" },
+      "200": { "$value": "#fde68a" },
+      "300": { "$value": "#fcd34d" },
+      "400": { "$value": "#fbbf24" },
+      "500": { "$value": "#f59e0b" },
+      "600": { "$value": "#d97706" },
+      "700": { "$value": "#b45309" },
+      "800": { "$value": "#92400e" },
+      "900": { "$value": "#78350f" },
+      "950": { "$value": "#451a03" }
+    }
+  },
+
+  "space": {
+    "$type": "dimension",
+    "$description": "Spacing scale on a 4px base.",
+    "0":  { "$value": "0px" },
+    "1":  { "$value": "4px" },
+    "2":  { "$value": "8px" },
+    "3":  { "$value": "12px" },
+    "4":  { "$value": "16px" },
+    "5":  { "$value": "20px" },
+    "6":  { "$value": "24px" },
+    "7":  { "$value": "32px" },
+    "8":  { "$value": "40px" },
+    "9":  { "$value": "48px" },
+    "10": { "$value": "64px" }
+  },
+
+  "radius": {
+    "$type": "dimension",
+    "none": { "$value": "0px" },
+    "sm":   { "$value": "4px" },
+    "md":   { "$value": "8px" },
+    "lg":   { "$value": "12px" },
+    "xl":   { "$value": "16px" },
+    "full": { "$value": "9999px" }
+  },
+
+  "border": {
+    "$type": "dimension",
+    "width": {
+      "thin":  { "$value": "1px" },
+      "thick": { "$value": "2px" }
+    }
+  },
+
+  "fontFamily": {
+    "$type": "fontFamily",
+    "sans": { "$value": "'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" },
+    "mono": { "$value": "ui-monospace, 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace" }
+  },
+
+  "fontSize": {
+    "$type": "dimension",
+    "xs":  { "$value": "0.75rem" },
+    "sm":  { "$value": "0.8125rem" },
+    "md":  { "$value": "0.875rem" },
+    "base":{ "$value": "0.9375rem" },
+    "lg":  { "$value": "1.0625rem" },
+    "xl":  { "$value": "1.375rem" },
+    "2xl": { "$value": "1.75rem" },
+    "3xl": { "$value": "2.25rem" }
+  },
+
+  "fontWeight": {
+    "$type": "fontWeight",
+    "regular":  { "$value": 400 },
+    "medium":   { "$value": 500 },
+    "semibold": { "$value": 600 },
+    "bold":     { "$value": 700 }
+  },
+
+  "lineHeight": {
+    "$type": "number",
+    "tight":  { "$value": 1.2 },
+    "snug":   { "$value": 1.35 },
+    "normal": { "$value": 1.5 }
+  },
+
+  "letterSpacing": {
+    "$type": "dimension",
+    "tight":  { "$value": "-0.01em" },
+    "normal": { "$value": "0em" },
+    "wide":   { "$value": "0.02em" }
+  },
+
+  "duration": {
+    "$type": "duration",
+    "fast":   { "$value": "120ms" },
+    "normal": { "$value": "200ms" },
+    "slow":   { "$value": "320ms" }
+  },
+
+  "easing": {
+    "$type": "cubicBezier",
+    "standard":   { "$value": [0.2, 0, 0, 1] },
+    "emphasized": { "$value": [0.3, 0, 0, 1] },
+    "exit":       { "$value": [0.4, 0, 1, 1] }
+  }
+}
