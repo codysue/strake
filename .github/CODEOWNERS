@@ -1,2 +1,5 @@
 # Default owner for everything in the repo.
 * @codysue
+
+# The Figma sync contracts (ledger, exports, plugin) are co-owned.
+/figma/ @codysue @isabelthedesigner
